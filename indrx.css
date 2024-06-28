@@ -1,0 +1,45 @@
+*{
+  padding: 0%;
+  margin: 0%;
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.maindiv{
+  width: 350px;
+  height: 500px;
+  background-color: black;
+  margin-top: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+input{
+  width: 99%;
+  height: 60px;
+  direction: ltr;
+  outline: none;
+  font-size: x-large;
+  font-weight: bold;
+
+}
+button{
+  width: 75px;
+  height: 60px;
+  margin-left: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: x-large;
+}
+
+.ob{
+  
+  color: white;
+}
+img{
+  border-radius: 5px;
+  width: 30px;
+}

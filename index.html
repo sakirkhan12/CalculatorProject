@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="indrx.css">
+</head>
+<body>
+  <div class="maindiv">
+    <input type="text" class="in" placeholder="0" >
+    <button class="o p" style="color: orangered;">AC</button>
+    <button class="o p" style="color: orangered;">R</button>
+    <button class="o p" style="color: orangered;">%</button>
+    <button class="o p" style="color: orangered;">/</button>
+    <button class="p">7</button>
+    <button class="p">8</button>
+    <button class="p">9</button>
+    <button class="o p" style="color: orangered;">*</button>
+    <button class="p">4</button>
+    <button class="p">5</button>
+    <button class="p">6</button>
+    <button class="o p" style="color: orangered;">-</button>
+    <button class="p">1</button>
+    <button class="p">2</button>
+    <button class="p">3</button>
+    <button class="o p" style="color: orangered;">+</button>
+    <button class="c"> <img src="https://th.bing.com/th/id/OIP.Ef5AqlS2aIcnB_rK9JCxqQHaHa?rs=1&pid=ImgDetMain" alt=""></button>
+    <button class="p">0</button>
+    <button class="p">.</button>
+    <button class="ob p " style="background-color: orangered;">=</button>
+    
+    
+
+  </div>
+  <script>
+    let n=document.querySelectorAll(".o");
+    let s=document.querySelector(".c");
+    let ob=document.querySelector(".ob");
+    let input=document.querySelector(".in");
+    let button=document.querySelectorAll(".p");
+    
+    
+   
+    s.addEventListener('click',()=>{
+   
+      if(ob.style.backgroundColor==="orangered"){
+        n.forEach(element => {
+          element.style.color="blue";
+          
+        });
+        ob.style.backgroundColor='blue';
+        console.log(ob.style.backgroundColor);
+
+      }
+      else {
+        n.forEach(element => {
+          element.style.color="orangered";
+          
+        });
+        ob.style.backgroundColor='orangered';
+        console.log(ob.style.backgroundColor);
+        
+      }
+    })
+    
+    let strings="";
+  button.forEach(element=>{
+    
+   
+    element.addEventListener('click',(e)=>{
+ 
+      if(e.target.innerHTML=='='){
+        console.log("sk");
+        let display=eval(strings);
+        input.value=display;
+    }
+    else if(e.target.innerHTML=="AC"){
+      input.value="";
+    }
+    else if(e.target.innerHTML=="R"){
+      strings=strings.substring(0,strings.length-1);
+      input.value=strings;
+    }
+    else{
+      
+      input.value+=element.innerText;
+      strings=input.value;
+
+    }
+    
+      
+    })
+
+  })
+  if(strings){
+
+    input.value="";
+  }
+    
+ 
+
+
+
+
+
+     
+
+
+  
+   
+
+
+    
+
+    
+  
+    
+
+
+    
+   
+
+    
+ 
+
+  </script>
+</body>
+</html>
